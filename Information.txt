@@ -1,0 +1,45 @@
+Entry point of project is : backend/server.js
+
+In app.js
+--> export app 
+    const express = require("express");
+    const app = express();
+
+    module.exports = app;
+In server.js
+--> import app
+const app = require('./app');
+
+for give PORT in app
+write code in server.js
+app.listen(process.env.PORT,() => {
+    console.log(`Server is working on http://localhost:${process.env.PORT}`);
+})
+
+make config folder
+
+make config.env file --> PORT = 4000 --> after this in server.js --> (process.env.PORT = 4000)
+
+now how server know that which folder we use for that write below code in server.js 
+
+----------------------------------------------------------------
+Download nodeModule --> npm i nodemon 
+we use "nodemon" in backend
+----------------------------------------------------------------
+In package.json file
+"scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node backend/server.js", --------> we start server.js file which is in backend folder
+    "dev": "nodemon bckend/server.js" ---------> In this project we use "nodemon" in devlopment-mode and in "production-host" mode we use "node"
+
+  },
+----------------------------------------------------------------
+Now, make first root
+-> run npm dev
+-> if entire code is correct then our server is working and result we can see on terminal
+-> after that go to POSTMAN create new collection "Ecommerece
+-> click on + sign which create new root give proper address as below
+    http://localhost:4000/api/v1/products
+-> After click on "SEND" buttone we able to see o/p in body part
+
+
