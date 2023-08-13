@@ -1,0 +1,8 @@
+1) node:events:490
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: listen EADDRINUSE: address already in use :::4000
+    
+// Solution : npx kill-port 4000
+// Why it occure : because of some reson app is crash and terminal is running out to procee

@@ -1,0 +1,6 @@
+// update repo
+
+git init
+git add .
+git commit -m "<day namr>"
+git origin master

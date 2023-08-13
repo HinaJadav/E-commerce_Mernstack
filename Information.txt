@@ -66,3 +66,24 @@ DB_URI = "mongo://localhost:27017/Ecommerece"
 -> "Making product APIs 
 -> make "module" folder
 -> 1st: product API
+----------------------------------------------------------------
+"trtm":in mongoose --> to a field in your schema, then trying to save strings 
+like "  hello", or "hello ", or "  hello ", would end up being saved as "hello" in Mongo - i.e. 
+white spaces will be removed from both sides of the string.
+----------------------------------------------------------------
+
+-> After make "productSchema" we export it from productModel.js
+-> import "productSchema" in "Conrollers"
+
+-> Why we do above import - export process?
+-> importing the product model into the controller in a MERN stack project is a best practice that follows the MVC pattern 
+and provides clear separation of concerns, reusability of code, and easier testing and debugging. This approach contributes 
+to a well-structured and maintainable codebase.
+
+-> Other way to do this : Inline Model Methods: Instead of defining separate models and controllers, you could define 
+the model methods directly within your controller. This would involve placing the database-related logic directly in 
+the controller functions that handle specific routes. While this might simplify the project structure, it can lead to 
+code duplication, reduced reusability, and harder-to-maintain code over time.---------> "No effective"
+----------------------------------------------------------------
+
+
