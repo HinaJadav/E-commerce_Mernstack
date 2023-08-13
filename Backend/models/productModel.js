@@ -34,13 +34,13 @@ const productSchema = mongoose.Schema({
     ],
     category: {
         type:String,
-        required:[true, "Please select a category"], 
+        require:[true, "Please select a category"]
         // category choose task we can do in two ways
         //1) manually
         //2) using "enum"
         // but we not do this part here --> we do it in backend
     },
-    stock: {
+    Stock: {
         type:String,
         require:[true, "Please Enter product stock"],
         maxLenght:[4, "Stock cannot exceed 4 characters"],

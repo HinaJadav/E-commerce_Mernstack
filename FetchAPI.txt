@@ -1,0 +1,20 @@
+JSON : 
+make file of json using "<filename>.json:
+in this we write like object
+ex:
+    here property value, name all in String
+    "a" : {
+        "name" : "sd"
+    }
+
+--------------------------------
+There are may APIs nuilt in for JSON file ---> so we use those APIs instand of JSON file
+make "index.js"
+
+const url = "<any APIs url>";
+const fetchData = () => {
+    fetch(url).then((data) => {
+        console.log(data);
+    })
+}
+fetchData();
