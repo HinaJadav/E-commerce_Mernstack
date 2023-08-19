@@ -1,5 +1,5 @@
 const express = require("express");
-const { getAllProducts, createProduct, updateProduct, deleteProduct} = require("../controllers/productController");
+const { getAllProducts, createProduct, updateProduct, deleteProduct, gerProductDetails} = require("../controllers/productController");
 
 const router = express.Router();
 
@@ -13,6 +13,10 @@ router.route("/products").get(getAllProducts);
 router.route("/product/:id").put(updateProduct); // this function we bring from "productController.js"
 
 // Delete product
-router.route("/product/:id").delete(deleteProduct); // this function we bring from
+router.route("/product/:id").delete(deleteProduct); // this function we bring from "productController.js"
+
+// Get product details
+router.route("/product/:id").get(gerProductDetails); // this function we bring from "productController.js"
+ 
 
 module.exports = router;

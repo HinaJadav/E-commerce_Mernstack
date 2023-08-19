@@ -89,3 +89,19 @@ code duplication, reduced reusability, and harder-to-maintain code over time.---
 -> After import router of product 
 -> now, time to check APT
 
+----------------------------------------------------------------
+
+After complete model of product 
+
+----------------------------------------------------------------
+Error Handling in backend ----> make "util" folder and 
+
+-> Error.captureStackTrace()This function is used to customize the stack trace of an error object.
+->  it mproving error reporting
+-> It's particularly useful when you're defining custom error classes or when you want to provide more meaningful and relevant error information to developers.
+
+----------------------------------------------------------------
+
+Now, Search filter pagination:
+
+

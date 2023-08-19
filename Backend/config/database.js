@@ -13,9 +13,8 @@ const connectDatabse =() => {
         // useFindAndModify:false
     }).then((data) => {
         console.log(`Mongodb connected with server: ${data.connection.host}`)
-    }).catch((err) => {
-        console.log(err)
     })
+    // here no need to use catch after "Handel" uncatch error in --> using errorHandler method --> in "Server.js"
 }
 
 // export "connectDatabse" function --> import in "server.js"
