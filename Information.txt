@@ -102,6 +102,21 @@ Error Handling in backend ----> make "util" folder and
 
 ----------------------------------------------------------------
 
-Now, Search filter pagination:
+Now, Search, filter, pagination:
+
+----------------------------------------------------------------
+
+User & password authentication
+
+----------------------------------------------------------------
+
+Authentication of user password and name
+
+installation : "bcryptjs" : this convert userpassword into HEX value so Admin not able to see it --> increase security level
+"validator" : email checking
+"nodeemailer" : for OTP generator like SEND
+"cookie-parser" : it store JSON token created by code
+"body-parser" : store some things so we access it in frontend
+
 
 

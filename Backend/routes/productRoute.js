@@ -1,5 +1,6 @@
 const express = require("express");
 const { getAllProducts, createProduct, updateProduct, deleteProduct, gerProductDetails} = require("../controllers/productController");
+const { isAuthenticatedUser } = require("../middleware/auth");
 
 const router = express.Router();
 
@@ -7,7 +8,7 @@ const router = express.Router();
 router.route("/product/new").post(createProduct); // import product APTS
 
 // Read/Get product
-router.route("/products").get(getAllProducts);
+router.route("/products").get(isAuthenticatedUser, getAllProducts);
 
 // Update product
 router.route("/product/:id").put(updateProduct); // this function we bring from "productController.js"
