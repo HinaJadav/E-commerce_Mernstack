@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const productSchema = new mongoose.Schema({
     name: {
@@ -15,7 +15,7 @@ const productSchema = new mongoose.Schema({
         required:[true, "Please Enter Product Price"],
         maxLenght: [8, "Price cannot exceed 8 characters"]
     },
-    rating : {
+    ratings : {
         type:Number,
         default:0
     },
@@ -52,12 +52,17 @@ const productSchema = new mongoose.Schema({
     },
     reviews: [
         {
+            user: {
+                type: mongoose.Schema.ObjectId,
+                ref: "User",
+                required: true,
+            },
             name: {
                 type:String,
                 required:true
             },
             rating: {
-                type:String,
+                type:Number,
                 required:true
             },
             comment: {
@@ -66,6 +71,11 @@ const productSchema = new mongoose.Schema({
             }
         }
     ],
+    user: {
+        type: mongoose.Schema.ObjectId,
+        ref: "User",
+        required: true,
+    },
     createdAt: { // when product is created
         type:Date,
         default:Date.now

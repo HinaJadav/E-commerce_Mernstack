@@ -118,5 +118,8 @@ installation : "bcryptjs" : this convert userpassword into HEX value so Admin no
 "cookie-parser" : it store JSON token created by code
 "body-parser" : store some things so we access it in frontend
 
+//----------------------------------------------------------------
+Backend User routes APIs
+ex: if any use want to check their profile
 
 

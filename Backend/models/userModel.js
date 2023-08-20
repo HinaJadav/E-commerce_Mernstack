@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const validator = require("validator");
 const bcrypt = require("bcryptjs"); // import for make user password sefa
 const jwt = require("jsonwebtoken");
-
+const crypto = require("crypto"); // use in generate password --> it is build in model in NodeJS
 
 //----------------------------------------------------------------
 
@@ -40,8 +40,8 @@ const userSchema = new mongoose.Schema({
         default:"user",
     },
 
-    resetPasswordTaken: String,
-    resetPasswordExpired: Date,
+    resetPasswordToken: String,
+    resetPasswordExpire: Date,
 });
 
 //one type of Event --> it occure before userSchema save 
@@ -74,11 +74,30 @@ userSchema.methods.getJWTToken = function() {
     });
 };
 
+
+
 // Compare Password
 userSchema.methods.comparePassword = async function(enteredPassword){
      return await bcrypt.compare(enteredPassword, this.password);
 };
 
 
+
+// Generate Password reset token
+userSchema.methods.getResetPasswordToken = function() {
+
+    //Generate Password
+    const resetToken = crypto.randomBytes(20).toString("hex");
+
+    // Hashing and adding resetPasswordToken to userSchema
+    this.resetPasswordToken = crypto
+    .createHash("sha256")
+    .update(resetToken)
+    .digest("hex");
+
+    this.resetPasswordExpire = Date.now() + 15 * 60 * 1000;
+
+    return resetToken;
+};
 
 module.exports = mongoose.model("User", userSchema);
