@@ -3,7 +3,7 @@ const catchAsynErrors = require("../middleware/catchAsyncErrors.js"); // import 
 const User = require("../models/userModel"); 
 const sendToken = require("../utils/jwtToken"); 
 const sendEmail = require("../utils/sendEmail");
-// const crypto = require("crypto");
+const crypto = require("crypto");
 
 //----------------------------------------------------------------
 
@@ -131,7 +131,7 @@ exports.resetPassword = catchAsynErrors(async (req, res, next) => {
     // creating token hash
     const resetPasswordToken = crypto
         .createHash("sha256")
-        .update(req.param.token)
+        .update(req.params.token)
         .digest("hex");
 
     // User found
