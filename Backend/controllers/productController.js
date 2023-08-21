@@ -63,6 +63,7 @@ exports.getAllProducts = catchAsynErrors(async (req, res) => {
 });
 
 
+
 // Update Product --> Admin
 exports.updateProduct = catchAsynErrors(async(req,res,next) => {
     // * when we use async function for solve error for that --> better to use try_catch block ---> for increase reusability make ErrorHander for this also
